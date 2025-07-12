@@ -26,6 +26,39 @@ Control four servo motors sequentially to perform a 0°→360° sweep and simula
 - **Servo power** → Arduino 5V  
 - **Servo GND** → Arduino GND
 
+# 🤖 Walking Algorithm
+
+
+**Algorithm HumanoidWalk**
+Input:  
+  – Hip and knee servos for right and left legs  
+  – Step angle θ (e.g. 30°)  
+  – Lift angle φ (e.g. 45°)  
+  – Delay Δt  
+
+Output: Continuous walking motion
+
+Begin
+  1. Initialize all servos to 90° (neutral stance).
+  
+  2. Loop forever:
+     a. Right leg:
+        i.  Lift knee by φ → KneeR = 90° – φ  
+        ii. Swing hip forward by θ → HipR = 90° + θ  
+        iii. Lower knee → KneeR = 90°  
+        iv. Shift body weight to right leg → HipL = 90° – (θ/2)
+  
+     b. Left leg:
+        i.  Lift knee by φ → KneeL = 90° – φ  
+        ii. Swing hip forward by θ → HipL = 90° + θ  
+        iii. Lower knee → KneeL = 90°  
+        iv. Shift body weight to left leg → HipR = 90° – (θ/2)
+  
+     c. Return both legs to neutral → all servos = 90°  
+     d. Wait Δt between each action for smooth motion.
+  End Loop
+End
+
 # How to Use
 
 1. Open Tinkercad and create a new Arduino circuit.  
