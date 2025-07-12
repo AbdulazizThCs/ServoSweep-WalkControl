@@ -29,7 +29,7 @@ Control four servo motors sequentially to perform a 0°→360° sweep and simula
 # 🤖 Walking Algorithm
 
 
-**Algorithm HumanoidWalk**
+**Algorithm HumanoidWalk** 
 Input:  
   – Hip and knee servos for right and left legs  
   – Step angle θ (e.g. 30°)  
@@ -55,8 +55,8 @@ Begin
         iv. Shift body weight to left leg → HipR = 90° – (θ/2)
   
      c. Return both legs to neutral → all servos = 90°  
-     d. Wait Δt between each action for smooth motion.
-  End Loop
+     d. Wait Δt between each action for smooth motion. 
+  End Loop 
 End
 
 # How to Use
